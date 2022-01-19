@@ -16,8 +16,20 @@ function HomeScreen({}) {
 				backgroundColor="transparent"
 				barStyle="light-content"
 			/>
-			<Text>Welcome to your new app build with </Text>
-			<Text>Typescript / Expo / Paper / React Navigation / Redux </Text>
+			<Text
+				onPressIn={undefined}
+				onPressOut={undefined}
+				android_hyphenationFrequency={undefined}
+			>
+				Welcome to your new app build with{" "}
+			</Text>
+			<Text
+				onPressIn={undefined}
+				onPressOut={undefined}
+				android_hyphenationFrequency={undefined}
+			>
+				Typescript / Expo / Paper / React Navigation / Redux{" "}
+			</Text>
 		</View>
 	);
 }

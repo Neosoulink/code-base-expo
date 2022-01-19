@@ -26,7 +26,14 @@ export default function Blank_Screen() {
 					flex: 1,
 				}}
 			>
-				<Text style={{ ...GS.mb3, fontSize: 40 }}>☹</Text>
+				<Text
+					style={{ ...GS.mb3, fontSize: 40 }}
+					onPressIn={undefined}
+					onPressOut={undefined}
+					android_hyphenationFrequency={undefined}
+				>
+					☹
+				</Text>
 				<Text
 					style={{
 						...GS.txtCenter,
@@ -34,6 +41,9 @@ export default function Blank_Screen() {
 						color: CC.gray,
 						fontSize: 16,
 					}}
+					onPressIn={undefined}
+					onPressOut={undefined}
+					android_hyphenationFrequency={undefined}
 				>
 					Something wrong
 				</Text>
@@ -52,6 +62,9 @@ export default function Blank_Screen() {
 						color: CC.gray,
 						fontSize: 12,
 					}}
+					onPressIn={undefined}
+					onPressOut={undefined}
+					android_hyphenationFrequency={undefined}
 				>
 					{name} - v{version}
 				</Text>
