@@ -19,7 +19,7 @@ export const navigationSlice = createSlice({
 	initialState,
 	reducers: {
 		setGroup: (state, action: PayloadAction<string>) => {
-			state.group += action.payload;
+			state.group = action.payload;
 		},
 	},
 });

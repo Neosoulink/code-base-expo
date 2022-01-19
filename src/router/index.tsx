@@ -26,7 +26,9 @@ const Router = ({}) => {
 
 	// EFFECTS
 	React.useEffect(() => {
-		setTimeout(() => setNavGroup(setGroup(NAV_GROUPS.APP)), 2000);
+		setTimeout(() => {
+			setNavGroup(setGroup(NAV_GROUPS.APP));
+		}, 3000);
 		return () => {};
 	}, []);
 
