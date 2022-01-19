@@ -17,7 +17,7 @@ function HomeScreen({}) {
 				backgroundColor="transparent"
 				barStyle="light-content"
 			/>
-			<PaperText>Welcome to your new app build with </PaperText>
+			<PaperText>Welcome to your new app build with</PaperText>
 			<PaperText>
 				Typescript / Expo / Paper / React Navigation / Redux
 			</PaperText>
