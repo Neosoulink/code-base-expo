@@ -5,15 +5,17 @@ import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 import { setCustomTextInput, setCustomText } from "react-native-global-props";
 
 // STORE
-import Store from "./store";
+import { store } from "./store";
 
 // ROUTER
 import Router from "./router";
 
 // STYLES
-import { ConstantColor as CC, GlobalStyle as GS } from "./src/assets/js/style";
+import { CONSTANT_COLOR as CC, GLOBAL_STYLE as GS } from "./assets/ts/styles";
 
-const theme = {
+type ThemeType = typeof DefaultTheme;
+
+const theme: ThemeType = {
 	...DefaultTheme,
 	dark: false,
 	mode: "adaptive",
@@ -24,7 +26,6 @@ const theme = {
 		accent: CC.primaryLight,
 		background: CC.light,
 		surface: CC.white,
-		text: CC.shelter,
 		disabled: CC.grayHighLight,
 		placeholder: CC.grayLight,
 		error: CC.danger,
@@ -41,10 +42,10 @@ setCustomText({
 
 export default function App() {
 	return (
-		<Provider store={Store}>
+		<Provider store={store}>
 			<PaperProvider
 				theme={theme}
-				settings={{ icon: (props) => <Icon {...props} /> }}
+				settings={{ icon: (props: any) => <Icon {...props} /> }}
 			>
 				<Router />
 			</PaperProvider>
