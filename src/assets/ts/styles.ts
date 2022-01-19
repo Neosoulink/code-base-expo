@@ -24,13 +24,13 @@ export const CONSTANT_SIZE = {
 };
 
 export const CONSTANT_COLOR = {
-	primary: "",
-	primaryLight: "",
-	primaryHightLight: "",
-	light: "",
-	secondary: "",
-	secondaryLight: "",
-	secondaryHighLight: "",
+	primary: "#fff",
+	primaryLight: "#fff",
+	primaryHightLight: "#fff",
+	light: "#fff",
+	secondary: "#fff",
+	secondaryLight: "#fff",
+	secondaryHighLight: "#fff",
 	gray: "#8f96a7",
 	grayLight: "#b3bbce",
 	grayHighLight: "#dce3f4",
