@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useAppSelector, useAppDispatch } from "../store/hooks";
 
 // ACTIONS & SELECTORS
-import { getGroup as getNavGroup } from "../store/features/navigation/slice";
+import { getGroup, setGroup } from "../store/features/navigation/slice";
 
 // CONSTANTS
 import NAV_GROUPS from "../store/features/navigation/groups";
@@ -18,19 +18,22 @@ const Stack = createNativeStackNavigator();
 
 // NAVIGATION COMPONENT
 const Router = ({}) => {
+	// ACTIONS
+	const setNavGroup = useAppDispatch();
+
 	// SELECTORS
-	const currentNavGroup = useAppSelector(getNavGroup);
+	const getNavGroup = useAppSelector(getGroup);
 
 	// EFFECTS
 	React.useEffect(() => {
-		setTimeout(() => {}, 2000);
+		setTimeout(() => setNavGroup(setGroup(NAV_GROUPS.APP)), 2000);
 		return () => {};
 	}, []);
 
 	const Routes = () => {
-		if (currentNavGroup === NAV_GROUPS.LOADING) {
+		if (getNavGroup === NAV_GROUPS.LOADING) {
 			return <Stack.Screen name="Stack/Loading" component={SCREENS.Loading} />;
-		} else if (currentNavGroup === NAV_GROUPS.APP) {
+		} else if (getNavGroup === NAV_GROUPS.APP) {
 			return <Stack.Screen name="Stack/Main" component={SCREENS.Home} />;
 		} else {
 			return <Stack.Screen name="Stack/Blank_" component={SCREENS.Blank_} />;

@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { View, BackHandler } from "react-native";
 import { Text, Button } from "react-native-paper";
 import { version, name } from "../../package.json";

@@ -6,7 +6,7 @@ import { Text } from "react-native-paper";
 import FocusAwareStatusBar from "../components/FocusAwareStatusBar";
 
 // STYLES
-import { CONSTANT_COLOR as CC, GLOBAL_STYLE as GS } from "../assets/ts/styles";
+import { GLOBAL_STYLE as GS } from "../assets/ts/styles";
 
 function HomeScreen({}) {
 	return (
