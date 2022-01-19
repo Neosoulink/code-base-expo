@@ -1,33 +1,60 @@
 import React from "react";
-import { connect } from "react-redux";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
+// HOOKS
+import { useAppSelector, useAppDispatch } from "../store/hooks";
+
+// ACTIONS & SELECTORS
+import { getGroup as getNavGroup } from "../store/features/navigation/slice";
+
+// CONSTANTS
+import NAV_GROUPS from "../store/features/navigation/groups";
+
 // SCREENS
-import SCREENS from "../screens";
+//import SCREENS from "../screens";
 
 const Stack = createStackNavigator();
 
 // NAVIGATION COMPONENT
-const Router = ({
-	currentRouteGroup,
-	groupLoading = null,
-	showWelcome = false,
-}) => {
+const Router = ({}) => {
+	// SELECTORS
+	const currentNavGroup = useAppSelector(getNavGroup);
+
 	// EFFECTS
 	React.useEffect(() => {
 		setTimeout(() => {}, 2000);
 		return () => {};
 	}, []);
 
-	// LOCAL COMPONENTS
-	const RouterRoutes = () => {
-		if (groupLoading) {
-			return <Stack.Screen name="Stack/Loading" component={SCREENS.Loading} />;
-		} else if (showWelcome || currentRouteGroup === routeGroupList.App) {
-			return <Stack.Screen name="Stack/Main" component={SCREENS.Main} />;
+	const Routes = () => {
+		if (currentNavGroup === NAV_GROUPS.LOADING) {
+			return (
+				<Stack.Screen
+					name="Stack/Loading"
+					component={() => {
+						return null;
+					}}
+				/>
+			);
+		} else if (currentNavGroup === NAV_GROUPS.APP) {
+			return (
+				<Stack.Screen
+					name="Stack/Main"
+					component={() => {
+						return null;
+					}}
+				/>
+			);
 		} else {
-			return <Stack.Screen name="Stack/Blank_" component={SCREENS.Blank_} />;
+			return (
+				<Stack.Screen
+					name="Stack/Blank_"
+					component={() => {
+						return null;
+					}}
+				/>
+			);
 		}
 	};
 
@@ -41,22 +68,10 @@ const Router = ({
 				}}
 				defaultScreenOptions={{ presentation: "card" }}
 			>
-				{RouterRoutes()}
+				{Routes()}
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
 };
 
-const mapStateToProps = (state) => {
-	return {
-		currentRouteGroup: currentRouteGroup(state),
-		groupLoading: isLoading(state),
-		showWelcome: showWelcome(state),
-	};
-};
-
-const mapDispatchToProps = (dispatch) => {
-	return {};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Router);
+export default Router;
