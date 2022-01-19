@@ -1,18 +1,13 @@
-import { combineReducers, createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import promise from "redux-promise";
+import { configureStore } from "@reduxjs/toolkit";
 
 // REDUCERS
-import userReducer from "./features/user/reducer";
+import navigationReducer from "./features/navigation/slice";
 
-// MIDDLEWARE=
-const middleware = applyMiddleware(thunk, promise);
+export const store = configureStore({
+	reducer: {
+		navigation: navigationReducer,
+	},
+});
 
-const store = createStore(
-	combineReducers({
-		user: userReducer,
-	}),
-	middleware
-);
-
-export default store;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
