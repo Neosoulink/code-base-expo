@@ -43,12 +43,6 @@ export const CONSTANT_COLOR = {
 };
 
 export const GLOBAL_STYLE = StyleSheet.create({
-	FFDecima: {
-		fontFamily: isAndroid ? "TipografiaRamis - DecimaMonoPro" : "DecimaMonoPro",
-	},
-	FFDromon: {
-		fontFamily: isAndroid ? "cf_dromon_lg-webfont" : "CFDromonTT-Light",
-	},
 	screen: {
 		flex: 1,
 		backgroundColor: CONSTANT_COLOR.white,
