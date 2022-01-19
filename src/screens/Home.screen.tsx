@@ -4,6 +4,7 @@ import { Text } from "react-native-paper";
 
 // COMPONENTS
 import FocusAwareStatusBar from "../components/FocusAwareStatusBar";
+import PaperText from "../components/PaperText";
 
 // STYLES
 import { GLOBAL_STYLE as GS } from "../assets/ts/styles";
@@ -16,20 +17,10 @@ function HomeScreen({}) {
 				backgroundColor="transparent"
 				barStyle="light-content"
 			/>
-			<Text
-				onPressIn={undefined}
-				onPressOut={undefined}
-				android_hyphenationFrequency={undefined}
-			>
-				Welcome to your new app build with{" "}
-			</Text>
-			<Text
-				onPressIn={undefined}
-				onPressOut={undefined}
-				android_hyphenationFrequency={undefined}
-			>
-				Typescript / Expo / Paper / React Navigation / Redux{" "}
-			</Text>
+			<PaperText>Welcome to your new app build with </PaperText>
+			<PaperText>
+				Typescript / Expo / Paper / React Navigation / Redux
+			</PaperText>
 		</View>
 	);
 }
