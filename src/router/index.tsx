@@ -33,12 +33,15 @@ const Router = ({}) => {
 	}, []);
 
 	const Routes = () => {
-		if (getNavGroup === NAV_GROUPS.LOADING) {
-			return <Stack.Screen name="Stack/Loading" component={SCREENS.Loading} />;
-		} else if (getNavGroup === NAV_GROUPS.APP) {
-			return <Stack.Screen name="Stack/Main" component={SCREENS.Home} />;
-		} else {
-			return <Stack.Screen name="Stack/Blank_" component={SCREENS.Blank_} />;
+		switch (getNavGroup) {
+			case NAV_GROUPS.LOADING:
+				return (
+					<Stack.Screen name="Stack/Loading" component={SCREENS.Loading} />
+				);
+			case NAV_GROUPS.APP:
+				return <Stack.Screen name="Stack/Main" component={SCREENS.Home} />;
+			default:
+				return <Stack.Screen name="Stack/Blank_" component={SCREENS.Blank_} />;
 		}
 	};
 
