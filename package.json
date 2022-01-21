@@ -34,9 +34,11 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.12.9",
+		"@types/jest": "^27.4.0",
 		"@types/react": "~17.0.21",
 		"@types/react-native": "^0.63.40",
 		"@types/react-native-global-props": "^1.1.1",
+		"@types/react-test-renderer": "^17.0.1",
 		"babel-preset-expo": "^9.0.2",
 		"jest": "^26.6.3",
 		"jest-expo": "^44.0.1",
