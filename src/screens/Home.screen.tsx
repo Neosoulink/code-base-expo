@@ -1,26 +1,23 @@
-import React from "react";
-import { View } from "react-native";
-import { Text } from "react-native-paper";
+import React from 'react';
+import { View } from 'react-native';
+import { Text } from 'react-native-paper';
 
 // COMPONENTS
-import FocusAwareStatusBar from "../components/FocusAwareStatusBar";
-import PaperText from "../components/PaperText";
+import { FocusAwareStatusBar } from '../components/Common';
 
 // STYLES
-import { GLOBAL_STYLE as GS } from "../assets/ts/styles";
+import { GLOBAL_STYLE as GS } from '../assets/ts/styles';
 
 function HomeScreen({}) {
 	return (
 		<View style={{ ...GS.screen, ...GS.centered }}>
 			<FocusAwareStatusBar
 				translucent={true}
-				backgroundColor="transparent"
-				barStyle="light-content"
+				backgroundColor='transparent'
+				barStyle='light-content'
 			/>
-			<PaperText>Welcome to your new app build with</PaperText>
-			<PaperText>
-				Typescript / Expo / Paper / React Navigation / Redux
-			</PaperText>
+			<Text>Welcome to your new app build with</Text>
+			<Text>Typescript / Expo / Paper / React Navigation / Redux</Text>
 		</View>
 	);
 }
