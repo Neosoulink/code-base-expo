@@ -1,7 +1,7 @@
-import { StyleSheet, Dimensions, Platform } from "react-native";
+import { StyleSheet, Dimensions, Platform } from 'react-native';
 
-export const isIOS = Platform.OS === "ios";
-export const isAndroid = Platform.OS === "android";
+export const isIOS = Platform.OS === 'ios';
+export const isAndroid = Platform.OS === 'android';
 
 export const CONSTANT_SIZE = {
 	FONT_SIZE_SM: 11,
@@ -17,44 +17,65 @@ export const CONSTANT_SIZE = {
 	SPACE_XLG: 40,
 	BOTTOM_NAVBAR_HEIGHT: 80,
 	STATUS_BAR_HEIGHT: 24,
-	SCREEN_HEIGHT: Dimensions.get("screen").height,
-	SCREEN_WIDTH: Dimensions.get("screen").width,
-	WINDOW_HEIGHT: Dimensions.get("window").height,
-	WINDOW_WIDTH: Dimensions.get("window").width,
+	SCREEN_HEIGHT: Dimensions.get('screen').height,
+	SCREEN_WIDTH: Dimensions.get('screen').width,
+	WINDOW_HEIGHT: Dimensions.get('window').height,
+	WINDOW_WIDTH: Dimensions.get('window').width,
 };
 
 export const CONSTANT_COLOR = {
-	primary: "#fff",
-	primaryLight: "#fff",
-	primaryHightLight: "#fff",
-	light: "#fff",
-	secondary: "#fff",
-	secondaryLight: "#fff",
-	secondaryHighLight: "#fff",
-	gray: "#8f96a7",
-	grayLight: "#b3bbce",
-	grayHighLight: "#dce3f4",
+	primary: '#fff',
+	primaryLight: '#fff',
+	primaryHightLight: '#fff',
+	secondary: '#fff',
+	secondaryLight: '#fff',
+	secondaryHighLight: '#fff',
+	muted: '#8f96a7',
+	mutedLight: '#b3bbce',
+	mutedHighLight: '#dce3f4',
 
-	success: "#2dbf09",
-	danger: "#E22323",
-	warning: "#ffdd30",
-	white: "#FFF",
-	input: "#edeef2",
+	light: '#fcfdff',
+	dark: '#0C2146',
+	info: '#2979FF',
+	success: '#43A047',
+	danger: '#F44336',
+	warning: '#FB8200',
+	white: '#FFFFFF',
+	input: '#edeef2',
+	transparent: 'transparent',
 };
 
 export const GLOBAL_STYLE = StyleSheet.create({
+	FF_NunitoExtraLight: {
+		fontFamily: 'Nunito-ExtraLight',
+	},
+	FF_NunitoLight: {
+		fontFamily: 'Nunito-Light',
+	},
+	FF_Nunito: {
+		fontFamily: 'Nunito-Regular',
+	},
+	FF_NunitoSemiBold: {
+		fontFamily: 'Nunito-SemiBold',
+	},
+	FF_NunitoBold: {
+		fontFamily: 'Nunito-Bold',
+	},
+	FF_NunitoBlack: {
+		fontFamily: 'Nunito-Black',
+	},
 	screen: {
 		flex: 1,
 		backgroundColor: CONSTANT_COLOR.white,
 	},
 	screenStatic: {
 		height: CONSTANT_SIZE.SCREEN_HEIGHT,
-		backgroundColor: CONSTANT_COLOR.white,
+		backgroundColor: CONSTANT_COLOR.primary,
 	},
 	screenStaticNav: {
 		flex: 1,
 		marginBottom: CONSTANT_SIZE.BOTTOM_NAVBAR_HEIGHT,
-		backgroundColor: CONSTANT_COLOR.white,
+		backgroundColor: CONSTANT_COLOR.primary,
 	},
 	bgPrimary: {
 		backgroundColor: CONSTANT_COLOR.primary,
@@ -62,23 +83,23 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	bgPrimaryLight: {
 		backgroundColor: CONSTANT_COLOR.primaryLight,
 	},
-	bgSecondary: {
-		backgroundColor: CONSTANT_COLOR.secondary,
-	},
-	bgSecondaryLight: {
-		backgroundColor: CONSTANT_COLOR.secondaryLight,
-	},
 	bgLight: {
 		backgroundColor: CONSTANT_COLOR.light,
 	},
-	bgDanger: {
-		backgroundColor: CONSTANT_COLOR.danger,
+	bgInfo: {
+		backgroundColor: CONSTANT_COLOR.info,
 	},
 	bgSuccess: {
 		backgroundColor: CONSTANT_COLOR.success,
 	},
+	bgDanger: {
+		backgroundColor: CONSTANT_COLOR.danger,
+	},
+	bgWarning: {
+		backgroundColor: CONSTANT_COLOR.warning,
+	},
 	bgTransparent: {
-		backgroundColor: "transparent",
+		backgroundColor: 'transparent',
 	},
 	txtPrimary: {
 		color: CONSTANT_COLOR.primary,
@@ -86,11 +107,8 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	txtPrimaryLight: {
 		color: CONSTANT_COLOR.primaryLight,
 	},
-	txtSecondary: {
-		color: CONSTANT_COLOR.secondary,
-	},
-	txtSecondaryLight: {
-		color: CONSTANT_COLOR.secondaryLight,
+	txtInfo: {
+		color: CONSTANT_COLOR.info,
 	},
 	txtSuccess: {
 		color: CONSTANT_COLOR.success,
@@ -98,70 +116,81 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	txtDanger: {
 		color: CONSTANT_COLOR.danger,
 	},
+	txtWarning: {
+		color: CONSTANT_COLOR.warning,
+	},
 	txtCenter: {
-		textAlign: "center",
+		textAlign: 'center',
+	},
+	txtJustify: {
+		textAlign: 'justify',
+	},
+	txtLeft: {
+		textAlign: 'left',
+	},
+	txtRight: {
+		textAlign: 'right',
+	},
+	txtAuto: {
+		textAlign: 'auto',
 	},
 	txtUpper: {
-		textTransform: "uppercase",
+		textTransform: 'uppercase',
 	},
 	txtLower: {
-		textTransform: "lowercase",
+		textTransform: 'lowercase',
 	},
 	txtCapitalize: {
-		textTransform: "capitalize",
+		textTransform: 'capitalize',
 	},
 	fontBold: {
-		fontWeight: "bold",
+		fontWeight: 'bold',
 	},
 	fontItalic: {
-		fontStyle: "italic",
+		fontStyle: 'italic',
 	},
 	centered: {
-		justifyContent: "center",
-		alignItems: "center",
+		justifyContent: 'center',
+		alignItems: 'center',
 	},
 	container: {
 		marginHorizontal: 20,
 		paddingHorizontal: 10,
 	},
-	content: {},
-	dNone: {
-		display: "none",
-	},
 	section: {
 		backgroundColor: CONSTANT_COLOR.light,
-		padding: 10,
+		padding: CONSTANT_SIZE.SPACE_SM,
 		marginBottom: 10,
 	},
 	titleSection: {
-		color: CONSTANT_COLOR.secondary,
-		marginBottom: 10,
-		textTransform: "uppercase",
-		fontWeight: "bold",
+		color: CONSTANT_COLOR.primary,
+		marginBottom: CONSTANT_SIZE.SPACE_SM,
+		textTransform: 'uppercase',
+		fontWeight: 'bold',
 	},
 	w100: {
-		width: "100%",
+		width: '100%',
 	},
 	w75: {
-		width: "75%",
+		width: '75%',
 	},
 	w50: {
-		width: "50%",
+		width: '50%',
 	},
 	w25: {
-		width: "25%",
+		width: '25%',
 	},
 	h100: {
-		height: "100%",
+		height: '100%',
 	},
 	h75: {
-		height: "75%",
+		height: '75%',
 	},
 	h50: {
-		height: "50%",
+		height: '50%',
 	},
 	h25: {
-		height: "25%",
+		height: '25%',
 	},
 	m0: {
 		margin: 0,
@@ -415,41 +444,50 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	px5: {
 		paddingHorizontal: 25,
 	},
+	h1: {
+		fontFamily: 'Nunito-Bold',
+		fontSize: CONSTANT_SIZE.FONT_SIZE_XLG,
+	},
+	h2: {
+		fontFamily: 'Nunito-Bold',
+		fontSize: CONSTANT_SIZE.FONT_SIZE_LG,
+	},
+	h3: {
+		fontFamily: 'Nunito-Bold',
+		fontSize: CONSTANT_SIZE.FONT_SIZE_MD,
+	},
+	small: {
+		fontSize: CONSTANT_SIZE.FONT_SIZE_SM,
+	},
 	imgCover: {
 		height: undefined,
 		width: undefined,
-		resizeMode: "cover",
+		resizeMode: 'cover',
 		flex: 1,
 	},
 	noShadow: {
-		shadowColor: "transparent",
+		shadowColor: 'transparent',
 		shadowOffset: { width: 0, height: 0 },
 		shadowRadius: 0,
 		shadowOpacity: 0,
 		elevation: 0,
 	},
 	shadowSm: {
-		shadowColor: CONSTANT_COLOR.secondary,
+		shadowColor: CONSTANT_COLOR.info,
 		shadowOffset: { width: 0, height: 1 },
 		shadowRadius: 5,
 		shadowOpacity: 0.2,
 		elevation: 2,
 	},
 	shadow: {
-		shadowColor: CONSTANT_COLOR.secondary,
+		shadowColor: CONSTANT_COLOR.info,
 		shadowOffset: { width: 1, height: 1.5 },
 		shadowRadius: 5,
 		shadowOpacity: 0.5,
 		elevation: 5,
 	},
 	shadowLg: {
-		// shadowColor: CONSTANT_COLOR.secondary,
-		// shadowOffset: { width: 2, height: 2 },
-		// shadowOpacity: 0.7,
-		// shadowRadius: 5,
-		// elevation: 8.5,
-
-		shadowColor: isIOS ? "#000" : CONSTANT_COLOR.secondary,
+		shadowColor: isIOS ? '#000' : CONSTANT_COLOR.info,
 		shadowOffset: {
 			width: isIOS ? 0 : 2,
 			height: 2,
@@ -458,6 +496,9 @@ export const GLOBAL_STYLE = StyleSheet.create({
 		shadowRadius: isIOS ? 3.84 : 5,
 
 		elevation: 8.5,
+	},
+	rounded0: {
+		borderRadius: 0,
 	},
 	roundedSm: {
 		borderRadius: 5,
@@ -472,70 +513,91 @@ export const GLOBAL_STYLE = StyleSheet.create({
 		borderRadius: 30,
 	},
 	noBorder: {
-		borderColor: "transparent",
+		borderColor: 'transparent',
 		borderWidth: 0,
 	},
 	borderSm: {
-		borderColor: CONSTANT_COLOR.secondaryLight,
+		borderColor: CONSTANT_COLOR.muted,
 		borderWidth: 0.5,
 	},
 	border: {
-		borderColor: CONSTANT_COLOR.secondaryLight,
+		borderColor: CONSTANT_COLOR.muted,
 		borderWidth: 1,
 	},
 	borderMd: {
-		borderColor: CONSTANT_COLOR.secondaryLight,
+		borderColor: CONSTANT_COLOR.muted,
 		borderWidth: 2,
 	},
 	borderLg: {
-		borderColor: CONSTANT_COLOR.secondaryLight,
+		borderColor: CONSTANT_COLOR.muted,
 		borderWidth: 4,
 	},
 	separator: {
-		borderTopColor: CONSTANT_COLOR.secondaryLight,
+		borderTopColor: CONSTANT_COLOR.muted,
 		borderTopWidth: 1,
 		marginVertical: 10,
 		padding: 0,
 	},
 	overlay: {
-		position: "absolute",
+		position: 'absolute',
 		flex: 1,
-		height: "100%",
-		width: "100%",
-		justifyContent: "center",
-		alignItems: "center",
-		backgroundColor: "rgba(0,0,0,0.3)",
+		height: '100%',
+		width: '100%',
+		justifyContent: 'center',
+		alignItems: 'center',
+		backgroundColor: 'rgba(0,0,0,0.3)',
+	},
+	positionAbsolute: {
+		position: 'absolute',
+	},
+	positionRelative: {
+		position: 'relative',
+	},
+	positionReset: {
+		position: undefined,
+	},
+	t0: {
+		top: 0,
+	},
+	b0: {
+		bottom: 0,
+	},
+	l0: {
+		left: 0,
+	},
+	r0: {
+		right: 0,
 	},
 	card: {
-		position: "relative",
+		position: 'relative',
 		padding: 15,
 		borderRadius: 10,
-		backgroundColor: "white",
+		backgroundColor: 'white',
 	},
 	cardBtnClose: {
-		position: "absolute",
+		position: 'absolute',
 		right: 10,
 	},
 	tabsContainer: {
 		backgroundColor: CONSTANT_COLOR.light,
-		flexDirection: "row",
-		alignItems: "stretch",
+		flexDirection: 'row',
+		alignItems: 'stretch',
 	},
 	tab: {
 		paddingVertical: 12,
 		borderBottomWidth: 3,
 		borderBottomColor: CONSTANT_COLOR.light,
 		flex: 1,
-		flexDirection: "row",
-		alignItems: "center",
-		justifyContent: "center",
+		flexDirection: 'row',
+		alignItems: 'center',
+		justifyContent: 'center',
 	},
 	activeTab: {
 		borderBottomColor: CONSTANT_COLOR.primary,
 	},
 	tabName: {
 		color: CONSTANT_COLOR.primary,
-		fontWeight: "bold",
+		fontWeight: 'bold',
 	},
 	tabIcon: {
 		marginRight: 4,
@@ -546,36 +608,36 @@ export const GLOBAL_STYLE = StyleSheet.create({
 		width: 130,
 		height: 35,
 		paddingHorizontal: 0,
-		alignItems: "center",
+		alignItems: 'center',
 	},
 	selectItem: {
-		width: "100%",
-		height: "100%",
-		color: CONSTANT_COLOR.secondaryLight,
+		width: '100%',
+		height: '100%',
+		color: CONSTANT_COLOR.muted,
 		fontSize: 15,
 	},
 	statsContainer: {
-		flexDirection: "row",
-		justifyContent: "space-between",
-		alignItems: "center",
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems: 'center',
 		marginHorizontal: 30,
 		marginVertical: 10,
 	},
 	stat: {
-		alignItems: "center",
-		justifyContent: "center",
+		alignItems: 'center',
+		justifyContent: 'center',
 		flex: 1,
 	},
 	statAmount: {
-		color: CONSTANT_COLOR.secondary,
+		color: CONSTANT_COLOR.muted,
 		fontSize: 18,
-		fontWeight: "bold",
+		fontWeight: 'bold',
 	},
 	statTitle: {
-		color: CONSTANT_COLOR.secondaryLight,
+		color: CONSTANT_COLOR.muted,
 		fontSize: 12,
-		fontWeight: "500",
-		textTransform: "capitalize",
+		fontWeight: '500',
+		textTransform: 'capitalize',
 		marginTop: 4,
 	},
 	form: {
@@ -585,21 +647,21 @@ export const GLOBAL_STYLE = StyleSheet.create({
 		marginBottom: 20,
 	},
 	inputTitle: {
-		color: CONSTANT_COLOR.secondaryLight,
+		color: CONSTANT_COLOR.muted,
 		fontSize: 10,
-		textTransform: "uppercase",
+		textTransform: 'uppercase',
 		marginBottom: 0,
 	},
 	inputGroup: {
-		flexDirection: "row",
-		alignItems: "stretch",
+		flexDirection: 'row',
+		alignItems: 'stretch',
 	},
 	appendTag: {},
 	input: {
 		height: 40,
 		borderBottomWidth: 1,
 		borderBottomColor: CONSTANT_COLOR.primary,
-		color: CONSTANT_COLOR.secondaryLight,
+		color: CONSTANT_COLOR.muted,
 		fontSize: 15,
 		paddingHorizontal: 10,
 	},
@@ -608,47 +670,70 @@ export const GLOBAL_STYLE = StyleSheet.create({
 		backgroundColor: CONSTANT_COLOR.light,
 	},
 	column: {
-		flexDirection: "column",
+		flexDirection: 'column',
 	},
 	row: {
-		flexDirection: "row",
+		flexDirection: 'row',
 	},
+	dFex: {
+		display: 'flex',
+	},
+	dNone: {
+		display: 'none',
+	},
+	alignBaseline: { alignItems: 'baseline' },
+	alignCenter: { alignItems: 'center' },
+	alignEnd: { alignItems: 'flex-end' },
+	alignStart: { alignItems: 'flex-start' },
+	alignStretch: { alignItems: 'stretch' },
+	justifyCenter: { justifyContent: 'center' },
+	justifyEnd: { justifyContent: 'flex-end' },
+	justifyStart: { justifyContent: 'flex-start' },
+	justifyAround: { justifyContent: 'space-around' },
+	justifyBetween: { justifyContent: 'space-between' },
+	justifyEvenly: { justifyContent: 'space-evenly' },
 	inlineItems: {
-		flexDirection: "row",
-		alignItems: "center",
+		flexDirection: 'row',
+		alignItems: 'center',
 	},
 	justifyContentBetween: {
-		flexDirection: "row",
-		justifyContent: "space-between",
-		alignItems: "center",
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems: 'center',
+	},
+	flex1: {
+		flex: 1,
+	},
+	flexWrap: {
+		flexWrap: 'wrap',
 	},
 	tableBtn: {
 		padding: 5,
-		flexDirection: "row",
-		justifyContent: "center",
+		flexDirection: 'row',
+		justifyContent: 'center',
 		marginHorizontal: 5,
 		paddingHorizontal: 10,
 		borderRadius: 5,
 	},
 	errorContainer: {
 		paddingVertical: 20,
-		alignItems: "center",
-		justifyContent: "center",
+		alignItems: 'center',
+		justifyContent: 'center',
 	},
 	errorMessage: {
 		color: CONSTANT_COLOR.primary,
 		fontSize: 13,
-		fontWeight: "400",
-		textAlign: "center",
+		fontWeight: '400',
+		textAlign: 'center',
 	},
 	btn: {
 		height: 45,
 		borderRadius: 5,
-		flexDirection: "row",
-		alignItems: "center",
-		justifyContent: "center",
+		flexDirection: 'row',
+		alignItems: 'center',
+		justifyContent: 'center',
 		borderWidth: 1,
-		borderColor: "rgba(0,0,0,0)",
+		borderColor: 'rgba(0,0,0,0)',
 		marginVertical: 5,
 		paddingHorizontal: 20,
 	},
@@ -660,71 +745,71 @@ export const GLOBAL_STYLE = StyleSheet.create({
 		backgroundColor: CONSTANT_COLOR.primaryLight,
 		borderColor: CONSTANT_COLOR.primaryLight,
 	},
-	btnSecondary: {
-		backgroundColor: CONSTANT_COLOR.secondary,
-		borderColor: CONSTANT_COLOR.secondary,
-	},
-	btnTopLeft: {
-		position: "absolute",
+	floatBtnTopLeft: {
+		position: 'absolute',
 		top: 30,
 		left: 20,
 		width: 40,
 		height: 40,
 		borderRadius: 40 / 2,
-		alignItems: "center",
-		justifyContent: "center",
-		backgroundColor: "rgba(22, 22, 43, 0.2)",
+		alignItems: 'center',
+		justifyContent: 'center',
 	},
-	btnBottomRight: {
-		position: "absolute",
+	floatBtnBottomRight: {
+		position: 'absolute',
 		bottom: 20,
 		right: 20,
 		width: 40,
 		height: 40,
 		borderRadius: 40 / 2,
-		alignItems: "center",
-		justifyContent: "center",
-		backgroundColor: "rgba(22, 22, 43, 0.2)",
-	},
-	accordionTitle: {
-		color: CONSTANT_COLOR.secondary,
+		alignItems: 'center',
+		justifyContent: 'center',
 	},
 	image: {
 		flex: 1,
 		height: undefined,
 		width: undefined,
-		resizeMode: "cover",
+		resizeMode: 'cover',
 	},
 	inputPicker: {
 		borderColor: CONSTANT_COLOR.input,
 		borderWidth: 1,
 		height: 30,
-		width: "100%",
-		color: CONSTANT_COLOR.gray,
+		width: '100%',
+		color: CONSTANT_COLOR.muted,
 		borderRadius: 7,
-		display: "flex",
-		flexDirection: "row",
-		alignItems: "center",
-		justifyContent: "space-between",
+		display: 'flex',
+		flexDirection: 'row',
+		alignItems: 'center',
+		justifyContent: 'space-between',
 		paddingHorizontal: 5,
 	},
 	inputPickerLabel: {
 		fontSize: 12,
-		color: CONSTANT_COLOR.gray,
+		color: CONSTANT_COLOR.muted,
 		paddingRight: 0,
-		width: "85%",
+		width: '85%',
 	},
 	inputPickerIcon: {
-		display: "flex",
-		flexDirection: "row",
-		justifyContent: "flex-end",
-		width: "15%",
+		display: 'flex',
+		flexDirection: 'row',
+		justifyContent: 'flex-end',
+		width: '15%',
 	},
 	textarea: {
-		borderColor: CONSTANT_COLOR.grayLight,
+		borderColor: CONSTANT_COLOR.mutedLight,
 		borderWidth: 1,
 		borderRadius: 5,
-		overflow: "hidden",
+		overflow: 'hidden',
 		height: 100,
+	},
+	overflowHidden: {
+		overflow: 'hidden',
+	},
+	overflowScroll: {
+		overflow: 'scroll',
+	},
+	overflowVisible: {
+		overflow: 'visible',
 	},
 });
