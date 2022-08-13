@@ -1,20 +1,72 @@
-export function isEmpty(data: any) {
+import { ComponentType } from 'react';
+
+/**
+ *
+ * @param _MyComponent
+ */
+export function getReactComponentProps<Props>(
+	_MyComponent: ComponentType<Props>,
+): Props {
+	return {} as unknown as Props;
+}
+
+export function checkServer(
+	url: string,
+	timeout = 2000,
+	onSuccessCallback: (msg?: string) => unknown = () => {},
+	onErrorCallback: (msg?: string) => any = () => {},
+	strick = false,
+): Promise<void> {
+	const controller = new AbortController();
+	const signal = controller.signal;
+	const options: RequestInit = { mode: 'no-cors', signal };
+	return fetch(url, options)
+		.then(
+			// @ts-ignore
+			setTimeout(() => {
+				controller.abort();
+			}, timeout),
+		)
+		.then((res) => {
+			if (
+				strick &&
+				!((res.status >= 200 && res.status < 300) || res.status === 304)
+			) {
+				console.log('⚠ Check server warn:', res.status);
+				return onErrorCallback(res.status.toString());
+			}
+
+			console.log('✅ Check server response:', res.status);
+			onSuccessCallback(res.status.toString());
+		})
+		.catch((error) => {
+			console.log('🛑 Check server error:', error);
+			onErrorCallback(error.message);
+		});
+}
+
+/**
+ *
+ * @param data
+ * @returns
+ */
+export function isEmpty(data: unknown) {
 	switch (typeof data) {
-		case "object":
-			for (var prop in data) {
+		case 'object':
+			for (const prop in data) {
 				if (data.hasOwnProperty(prop)) {
 					return false;
 				}
 			}
 			return JSON.stringify(data) === JSON.stringify({}) || data === null;
 
-		case "string":
-			return !!!data && !!!data.trim().length && data != null;
+		case 'string':
+			return !data && !data.trim().length && data != null;
 
-		case "number":
-			return !!!data && !(data != NaN);
+		case 'number':
+			return !data && !isNaN(data);
 
-		case "boolean":
+		case 'boolean':
 			return !data;
 
 		default:
@@ -30,35 +82,55 @@ export function isEmpty(data: any) {
  * @returns Array
  */
 export function testObjectItem(
-	object: { [key: string]: any },
-	except: string[] = []
+	object: { [key: string]: unknown },
+	except: string[] = [],
 ) {
-	if (typeof object != "object")
-		return console.warn("This function require a object");
+	if (typeof object !== 'object') {
+		return console.warn('This function require a object');
+	}
 
-	let arrayKey = [];
+	const arrayKey = [];
 
 	for (const key in object) {
 		if (Object.hasOwnProperty.call(object, key)) {
-			if (isEmpty(object[key]) && except.includes(key)) arrayKey.push(key);
+			if (isEmpty(object[key]) && except.includes(key)) {
+				arrayKey.push(key);
+			}
 		}
 	}
 	return arrayKey;
 }
 
+/**
+ *
+ * @param length
+ * @returns
+ */
 export function plural(length: number) {
-	if (length > 1) return "s";
-	else return "";
+	if (length > 1) {
+		return 's';
+	} else {
+		return '';
+	}
 }
 
-export function formatNativeDate(date = "") {
-	var d = new Date(date),
-		month = "" + (d.getMonth() + 1),
-		day = "" + d.getDate(),
-		year = d.getFullYear();
+/**
+ *
+ * @param date
+ * @returns
+ */
+export function formatNativeDate(date = '') {
+	const d = new Date(date);
+	let month = '' + (d.getMonth() + 1);
+	let day = '' + d.getDate();
+	const year = d.getFullYear();
 
-	if (month.length < 2) month = "0" + month;
-	if (day.length < 2) day = "0" + day;
+	if (month.length < 2) {
+		month = '0' + month;
+	}
+	if (day.length < 2) {
+		day = '0' + day;
+	}
 
-	return [year, month, day].join("-");
+	return [year, month, day].join('-');
 }
