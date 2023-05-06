@@ -14,7 +14,7 @@ function HomeScreen({}) {
 			<FocusAwareStatusBar
 				translucent={true}
 				backgroundColor='transparent'
-				barStyle='light-content'
+				barStyle='dark-content'
 			/>
 			<Text>Welcome to your new app build with</Text>
 			<Text>Typescript / Expo / Paper / React Navigation / Redux</Text>

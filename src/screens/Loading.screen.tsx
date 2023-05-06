@@ -10,7 +10,7 @@ import { GLOBAL_STYLE as GS } from '../assets/ts/styles';
 export default ({}) => (
 	<View style={{ ...GS.screen, ...GS.centered }}>
 		<FocusAwareStatusBar
-			barStyle='light-content'
+			barStyle='dark-content'
 			translucent={true}
 			backgroundColor='transparent'
 		/>
