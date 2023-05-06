@@ -12,7 +12,7 @@
 		"ios": "expo start --ios",
 		"web": "expo start --web",
 		"eject": "expo eject",
-		"np-release-dev": "np --no-publish --branch dev",
+		"np-release": "np --no-publish --branch master",
 		"lint": "eslint . --ext .js,.jsx,.ts,.tsx",
 		"test": "jest",
 		"prepare": "husky install"
