@@ -25,6 +25,7 @@ module.exports = function (api) {
 						'~hooks': './src/hooks',
 						'~helpers': './src/helpers',
 						'~imgs': './src/assets/img',
+						'~router': './src/router',
 						'~screens': ['./src/screens'],
 						'~store': './src/store',
 						'~styles': './src/assets/ts/styles',
