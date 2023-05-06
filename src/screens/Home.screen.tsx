@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { Text } from 'react-native-paper';
 
 // COMPONENTS
-import { FocusAwareStatusBar } from '../components/Common';
+import { FocusAwareStatusBar } from '../components/commons';
 
 // STYLES
 import { GLOBAL_STYLE as GS } from '../assets/ts/styles';

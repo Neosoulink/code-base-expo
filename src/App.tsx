@@ -5,10 +5,10 @@ import React from 'react';
 import Router from './router';
 
 // COMPONENTS
-import PreAppProvider from './components/Providers/PreApp';
-import ReduxProvider from './components/Providers/Redux';
-import PaperProvider from './components/Providers/Paper';
-import AppProvider from './components/Providers/App';
+import PreAppProvider from './components/middlewares/PreApp';
+import ReduxProvider from './components/middlewares/Redux';
+import PaperProvider from './components/middlewares/Paper';
+import AppProvider from './components/middlewares/App';
 
 export default function App() {
 	return (

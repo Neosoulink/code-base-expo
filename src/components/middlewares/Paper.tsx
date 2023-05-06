@@ -3,10 +3,10 @@ import { DefaultTheme, Provider } from 'react-native-paper';
 
 // TYPES
 import type { IconProps } from 'react-native-paper/lib/typescript/components/MaterialCommunityIcon';
-import { IconPropsType } from '../Common/Icon';
+import { IconPropsType } from '../commons/Icon';
 
 // COMPONENTS
-import { Icon } from '../Common';
+import { Icon } from '../commons';
 
 // STYLES
 import {
