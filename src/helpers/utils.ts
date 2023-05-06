@@ -1,8 +1,10 @@
 import { ComponentType } from 'react';
 
 /**
+ * Return properties of the passed react component
  *
- * @param _MyComponent
+ * @param component
+ * @returns
  */
 export function getReactComponentProps<Props>(
 	_MyComponent: ComponentType<Props>,
@@ -10,44 +12,10 @@ export function getReactComponentProps<Props>(
 	return {} as unknown as Props;
 }
 
-export function checkServer(
-	url: string,
-	timeout = 2000,
-	onSuccessCallback: (msg?: string) => unknown = () => {},
-	onErrorCallback: (msg?: string) => any = () => {},
-	strick = false,
-): Promise<void> {
-	const controller = new AbortController();
-	const signal = controller.signal;
-	const options: RequestInit = { mode: 'no-cors', signal };
-	return fetch(url, options)
-		.then(
-			// @ts-ignore
-			setTimeout(() => {
-				controller.abort();
-			}, timeout),
-		)
-		.then((res) => {
-			if (
-				strick &&
-				!((res.status >= 200 && res.status < 300) || res.status === 304)
-			) {
-				console.log('⚠ Check server warn:', res.status);
-				return onErrorCallback(res.status.toString());
-			}
-
-			console.log('✅ Check server response:', res.status);
-			onSuccessCallback(res.status.toString());
-		})
-		.catch((error) => {
-			console.log('🛑 Check server error:', error);
-			onErrorCallback(error.message);
-		});
-}
-
 /**
+ * Test if the passed value is empty
  *
- * @param data
+ * @param data Date to pass
  * @returns
  */
 export function isEmpty(data: unknown) {
@@ -75,6 +43,7 @@ export function isEmpty(data: unknown) {
 }
 
 /**
+ * Test if the passed object has none-empty fields
  *
  * @param {object} object Object that will be tested
  * @param {string[]} except fields that will be excepted
@@ -102,6 +71,7 @@ export function testObjectItem(
 }
 
 /**
+ * Return an `s` if the passed length is > 1
  *
  * @param length
  * @returns
@@ -115,6 +85,7 @@ export function plural(length: number) {
 }
 
 /**
+ * Format native date
  *
  * @param date
  * @returns
