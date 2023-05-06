@@ -1,15 +1,10 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 
 // COMPONENTS
 import StackNavigator from './StackNavigator';
 
 export interface Props {}
 
-const Router: React.FC<Props> = ({}) => (
-	<NavigationContainer>
-		<StackNavigator />
-	</NavigationContainer>
-);
+const Router: React.FC<Props> = ({}) => <StackNavigator />;
 
 export default Router;
