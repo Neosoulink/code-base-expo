@@ -10,7 +10,7 @@ import { GLOBAL_STYLE as GS } from '../assets/ts/styles';
 
 function HomeScreen({}) {
 	return (
-		<View style={{ ...GS.screen, ...GS.centered }}>
+		<View style={{ ...GS.screen, ...GS.centeredItems }}>
 			<FocusAwareStatusBar
 				translucent={true}
 				backgroundColor='transparent'

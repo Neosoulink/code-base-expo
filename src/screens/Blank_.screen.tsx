@@ -12,7 +12,7 @@ import { CONSTANT_COLOR as CC, GLOBAL_STYLE as GS } from '../assets/ts/styles';
 export default function Blank_Screen() {
 	const STYLES = StyleSheet.create({
 		content: {
-			...GS.centered,
+			...GS.centeredItems,
 			...GS.px4,
 			flex: 1,
 		},

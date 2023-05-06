@@ -59,7 +59,7 @@ const STYLES = StyleSheet.create({
 		...GS.row,
 		alignItems: 'center',
 	},
-	loaderContainer: { ...GS.h100, ...GS.centered, flex: 1 },
+	loaderContainer: { ...GS.h100, ...GS.centeredItems, flex: 1 },
 	cardImg: {
 		width: 40,
 		height: 40,
@@ -126,7 +126,7 @@ const TouchableCard: React.FC<TouchableCardPropsType> = ({
 								: (iconProps || img) && (
 										<View
 											style={{
-												...GS.centered,
+												...GS.centeredItems,
 												...GS.mr2,
 											}}>
 											{iconProps && !img && (
@@ -180,7 +180,7 @@ const TouchableCard: React.FC<TouchableCardPropsType> = ({
 							{!isEmpty(indicatorIconProps) && !indicatorText && (
 								<View
 									style={{
-										...GS.centered,
+										...GS.centeredItems,
 										...GS.px1,
 									}}>
 									<Icon
@@ -197,7 +197,7 @@ const TouchableCard: React.FC<TouchableCardPropsType> = ({
 							{!isEmpty(indicatorText) && (
 								<Text
 									style={{
-										...GS.centered,
+										...GS.centeredItems,
 										...GS.px1,
 										fontSize: indicatorTextSize,
 										color: indicatorTextColor || CC.primary,

@@ -101,6 +101,21 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	bgTransparent: {
 		backgroundColor: 'transparent',
 	},
+	txtXlg: {
+		fontFamily: 'Nunito-Bold',
+		fontSize: CONSTANT_SIZE.FONT_SIZE_XLG,
+	},
+	txtLg: {
+		fontFamily: 'Nunito-Bold',
+		fontSize: CONSTANT_SIZE.FONT_SIZE_LG,
+	},
+	txtMd: {
+		fontFamily: 'Nunito-Bold',
+		fontSize: CONSTANT_SIZE.FONT_SIZE_MD,
+	},
+	txtSm: {
+		fontSize: CONSTANT_SIZE.FONT_SIZE_SM,
+	},
 	txtPrimary: {
 		color: CONSTANT_COLOR.primary,
 	},
@@ -149,24 +164,9 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	fontItalic: {
 		fontStyle: 'italic',
 	},
-	centered: {
-		justifyContent: 'center',
-		alignItems: 'center',
-	},
 	container: {
-		marginHorizontal: 20,
-		paddingHorizontal: 10,
-	},
-	section: {
-		backgroundColor: CONSTANT_COLOR.light,
-		padding: CONSTANT_SIZE.SPACE_SM,
-		marginBottom: 10,
-	},
-	titleSection: {
-		color: CONSTANT_COLOR.primary,
-		marginBottom: CONSTANT_SIZE.SPACE_SM,
-		textTransform: 'uppercase',
-		fontWeight: 'bold',
+		marginHorizontal: CONSTANT_SIZE.SPACE,
+		paddingHorizontal: CONSTANT_SIZE.SPACE,
 	},
 	w100: {
 		width: '100%',
@@ -444,27 +444,6 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	px5: {
 		paddingHorizontal: 25,
 	},
-	h1: {
-		fontFamily: 'Nunito-Bold',
-		fontSize: CONSTANT_SIZE.FONT_SIZE_XLG,
-	},
-	h2: {
-		fontFamily: 'Nunito-Bold',
-		fontSize: CONSTANT_SIZE.FONT_SIZE_LG,
-	},
-	h3: {
-		fontFamily: 'Nunito-Bold',
-		fontSize: CONSTANT_SIZE.FONT_SIZE_MD,
-	},
-	small: {
-		fontSize: CONSTANT_SIZE.FONT_SIZE_SM,
-	},
-	imgCover: {
-		height: undefined,
-		width: undefined,
-		resizeMode: 'cover',
-		flex: 1,
-	},
 	noShadow: {
 		shadowColor: 'transparent',
 		shadowOffset: { width: 0, height: 0 },
@@ -540,11 +519,9 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	},
 	overlay: {
 		position: 'absolute',
-		flex: 1,
 		height: '100%',
 		width: '100%',
-		justifyContent: 'center',
-		alignItems: 'center',
+		flex: 1,
 		backgroundColor: 'rgba(0,0,0,0.3)',
 	},
 	positionAbsolute: {
@@ -567,103 +544,6 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	},
 	r0: {
 		right: 0,
-	},
-	card: {
-		position: 'relative',
-		padding: 15,
-		borderRadius: 10,
-		backgroundColor: 'white',
-	},
-	cardBtnClose: {
-		position: 'absolute',
-		right: 10,
-	},
-	tabsContainer: {
-		backgroundColor: CONSTANT_COLOR.light,
-		flexDirection: 'row',
-		alignItems: 'stretch',
-	},
-	tab: {
-		paddingVertical: 12,
-		borderBottomWidth: 3,
-		borderBottomColor: CONSTANT_COLOR.light,
-		flex: 1,
-		flexDirection: 'row',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-	activeTab: {
-		borderBottomColor: CONSTANT_COLOR.primary,
-	},
-	tabName: {
-		color: CONSTANT_COLOR.primary,
-		fontWeight: 'bold',
-	},
-	tabIcon: {
-		marginRight: 4,
-	},
-	selectContainer: {
-		borderBottomColor: CONSTANT_COLOR.primary,
-		borderBottomWidth: 1,
-		width: 130,
-		height: 35,
-		paddingHorizontal: 0,
-		alignItems: 'center',
-	},
-	selectItem: {
-		width: '100%',
-		height: '100%',
-		color: CONSTANT_COLOR.muted,
-		fontSize: 15,
-	},
-	statsContainer: {
-		flexDirection: 'row',
-		justifyContent: 'space-between',
-		alignItems: 'center',
-		marginHorizontal: 30,
-		marginVertical: 10,
-	},
-	stat: {
-		alignItems: 'center',
-		justifyContent: 'center',
-		flex: 1,
-	},
-	statAmount: {
-		color: CONSTANT_COLOR.muted,
-		fontSize: 18,
-		fontWeight: 'bold',
-	},
-	statTitle: {
-		color: CONSTANT_COLOR.muted,
-		fontSize: 12,
-		fontWeight: '500',
-		textTransform: 'capitalize',
-		marginTop: 4,
-	},
-	form: {
-		marginBottom: 32,
-	},
-	field: {
-		marginBottom: 20,
-	},
-	inputTitle: {
-		color: CONSTANT_COLOR.muted,
-		fontSize: 10,
-		textTransform: 'uppercase',
-		marginBottom: 0,
-	},
-	inputGroup: {
-		flexDirection: 'row',
-		alignItems: 'stretch',
-	},
-	appendTag: {},
-	input: {
-		height: 40,
-		borderBottomWidth: 1,
-		borderBottomColor: CONSTANT_COLOR.primary,
-		color: CONSTANT_COLOR.muted,
-		fontSize: 15,
-		paddingHorizontal: 10,
 	},
 	th: {
 		height: 40,
@@ -692,8 +572,12 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	justifyAround: { justifyContent: 'space-around' },
 	justifyBetween: { justifyContent: 'space-between' },
 	justifyEvenly: { justifyContent: 'space-evenly' },
-	inlineItems: {
+	inlinedItems: {
 		flexDirection: 'row',
+		alignItems: 'center',
+	},
+	centeredItems: {
+		justifyContent: 'center',
 		alignItems: 'center',
 	},
 	justifyContentBetween: {
@@ -707,94 +591,11 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	flexWrap: {
 		flexWrap: 'wrap',
 	},
-	tableBtn: {
-		padding: 5,
-		flexDirection: 'row',
-		justifyContent: 'center',
-		marginHorizontal: 5,
-		paddingHorizontal: 10,
-		borderRadius: 5,
-	},
-	errorContainer: {
-		paddingVertical: 20,
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-	errorMessage: {
-		color: CONSTANT_COLOR.primary,
-		fontSize: 13,
-		fontWeight: '400',
-		textAlign: 'center',
-	},
-	btn: {
-		height: 45,
-		borderRadius: 5,
-		flexDirection: 'row',
-		alignItems: 'center',
-		justifyContent: 'center',
-		borderWidth: 1,
-		borderColor: 'rgba(0,0,0,0)',
-		marginVertical: 5,
-		paddingHorizontal: 20,
-	},
-	btnPrimary: {
-		backgroundColor: CONSTANT_COLOR.primary,
-		borderColor: CONSTANT_COLOR.primary,
-	},
-	btnPrimaryLight: {
-		backgroundColor: CONSTANT_COLOR.primaryLight,
-		borderColor: CONSTANT_COLOR.primaryLight,
-	},
-	floatBtnTopLeft: {
-		position: 'absolute',
-		top: 30,
-		left: 20,
-		width: 40,
-		height: 40,
-		borderRadius: 40 / 2,
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-	floatBtnBottomRight: {
-		position: 'absolute',
-		bottom: 20,
-		right: 20,
-		width: 40,
-		height: 40,
-		borderRadius: 40 / 2,
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-	image: {
+	coverImage: {
 		flex: 1,
 		height: undefined,
 		width: undefined,
 		resizeMode: 'cover',
-	},
-	inputPicker: {
-		borderColor: CONSTANT_COLOR.input,
-		borderWidth: 1,
-		height: 30,
-		width: '100%',
-		color: CONSTANT_COLOR.muted,
-		borderRadius: 7,
-		display: 'flex',
-		flexDirection: 'row',
-		alignItems: 'center',
-		justifyContent: 'space-between',
-		paddingHorizontal: 5,
-	},
-	inputPickerLabel: {
-		fontSize: 12,
-		color: CONSTANT_COLOR.muted,
-		paddingRight: 0,
-		width: '85%',
-	},
-	inputPickerIcon: {
-		display: 'flex',
-		flexDirection: 'row',
-		justifyContent: 'flex-end',
-		width: '15%',
 	},
 	textarea: {
 		borderColor: CONSTANT_COLOR.mutedLight,
@@ -812,4 +613,11 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	overflowVisible: {
 		overflow: 'visible',
 	},
+	zIndexBack: { zIndex: -1 },
+	zIndexFront: { zIndex: 9999 },
+	opacity0: { opacity: 0 },
+	opacity25: { opacity: 0.25 },
+	opacity50: { opacity: 0.5 },
+	opacity75: { opacity: 0.75 },
+	opacity100: { opacity: 1 },
 });
