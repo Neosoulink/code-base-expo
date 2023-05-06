@@ -4,7 +4,7 @@ import { Text, Button } from 'react-native-paper';
 import { version, name } from '../../package.json';
 
 // COMPONENTS
-import { FocusAwareStatusBar } from '../components/commons';
+import { FocusAwareStatusBar } from '../components/common';
 
 // STYLES
 import { CONSTANT_COLOR as CC, GLOBAL_STYLE as GS } from '../assets/ts/styles';

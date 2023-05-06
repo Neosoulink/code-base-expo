@@ -2,7 +2,7 @@ import React from 'react';
 import { View, ActivityIndicator } from 'react-native';
 
 // COMMONS
-import { FocusAwareStatusBar } from '../components/commons';
+import { FocusAwareStatusBar } from '../components/common';
 
 // STYLES
 import { GLOBAL_STYLE as GS } from '../assets/ts/styles';
