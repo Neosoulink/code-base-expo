@@ -3,14 +3,14 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import * as SplashScreen from 'expo-splash-screen';
 
 // HOOKS
-import { useCachedResources } from '../../hooks';
+import useCachedResources from '~hooks/useCachedResources';
 
 // LOCAL TYPES
 export interface Props {
 	children: React.ReactElement<unknown>;
 }
 
-const PreAppProvider: React.FC<Props> = (props) => {
+const PreAppProvider: React.FC<Props> = props => {
 	// HOOKS
 	const appIsReady = useCachedResources();
 

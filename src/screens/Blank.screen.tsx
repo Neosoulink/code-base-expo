@@ -4,12 +4,12 @@ import { Text, Button } from 'react-native-paper';
 import { version, name } from '../../package.json';
 
 // COMPONENTS
-import { FocusAwareStatusBar } from '../components/common';
+import FocusAwareStatusBar from '~components/common/FocusAwareStatusBar';
 
 // STYLES
 import { CONSTANT_COLOR as CC, GLOBAL_STYLE as GS } from '../assets/ts/styles';
 
-export default function Blank_Screen() {
+export default function BlankScreen() {
 	const STYLES = StyleSheet.create({
 		content: {
 			...GS.centeredItems,
@@ -33,16 +33,16 @@ export default function Blank_Screen() {
 	return (
 		<View style={{ ...GS.screen }}>
 			<FocusAwareStatusBar
-				barStyle='dark-content'
+				barStyle="dark-content"
 				translucent={true}
-				backgroundColor='transparent'
+				backgroundColor="transparent"
 			/>
 
 			<View style={STYLES.content}>
 				<Text style={STYLES.deadIcon}>☹</Text>
 				<Text style={STYLES.somethingWrong}>Something wrong</Text>
 				<Button
-					mode='text'
+					mode="text"
 					uppercase={false}
 					onPress={() => BackHandler.exitApp()}>
 					Close app

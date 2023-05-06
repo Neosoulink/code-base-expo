@@ -2,7 +2,7 @@ import React from 'react';
 import { setCustomTextInput, setCustomText } from 'react-native-global-props';
 
 // HOOKS
-import { useAppDispatch } from '../../hooks';
+import useAppDispatch from '~hooks/useReduxDispatch';
 
 // STORE
 import { ROUTES_GROUPS, setGroup } from '../../store/features/navigation';
@@ -15,7 +15,7 @@ export interface Props {
 	children: React.ReactElement<unknown>;
 }
 
-const AppProvider: React.FC<Props> = (props) => {
+const AppProvider: React.FC<Props> = props => {
 	// DISPATCHER
 	const dispatch = useAppDispatch();
 

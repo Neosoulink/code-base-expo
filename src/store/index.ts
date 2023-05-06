@@ -8,7 +8,7 @@ export const store = configureStore({
 	reducer: {
 		navigation: navigationReducer,
 	},
-	middleware: (getDefaultMiddleware) =>
+	middleware: getDefaultMiddleware =>
 		getDefaultMiddleware({ serializableCheck: false }).concat(logger),
 	devTools: __DEV__,
 });

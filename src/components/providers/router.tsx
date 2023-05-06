@@ -28,7 +28,7 @@ export const NAVIGATION_THEME: NavigationThemeType = {
 	dark: PAPER_THEME.dark,
 };
 
-const RouterProvider: React.FC<React.PropsWithChildren<Props>> = (props) => (
+const RouterProvider: React.FC<React.PropsWithChildren<Props>> = props => (
 	<View
 		style={{
 			...GS.w100,

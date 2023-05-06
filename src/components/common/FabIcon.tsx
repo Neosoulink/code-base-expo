@@ -9,7 +9,7 @@ export interface Props {
 	color: string;
 }
 
-const FabIcon: React.FC<Props> = (props) => (
+const FabIcon: React.FC<Props> = props => (
 	<Icon name={props.name} size={props.size} color={props.color} />
 );
 

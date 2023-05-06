@@ -117,7 +117,7 @@ const TouchableCard: React.FC<TouchableCardPropsType> = ({
 					}}>
 					{loading ? (
 						<View style={STYLES.loaderContainer}>
-							<ActivityIndicator color={loaderColor} size='small' />
+							<ActivityIndicator color={loaderColor} size="small" />
 						</View>
 					) : (
 						<>

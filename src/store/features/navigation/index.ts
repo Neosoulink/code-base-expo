@@ -31,6 +31,6 @@ export const navigationSlice = createSlice({
 export const { setGroup } = navigationSlice.actions;
 
 // SELECTORS
-export const getGroup = (state: RootState) => state.navigation.group;
+export const currentRouteGroup = (state: RootState) => state.navigation.group;
 
 export default navigationSlice.reducer;

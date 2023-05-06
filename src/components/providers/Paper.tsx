@@ -1,12 +1,9 @@
 import React from 'react';
 import { DefaultTheme, Provider } from 'react-native-paper';
-
-// TYPES
 import type { IconProps } from 'react-native-paper/lib/typescript/components/MaterialCommunityIcon';
-import { IconPropsType } from '../common/Icon';
 
 // COMPONENTS
-import { Icon } from '../common';
+import Icon, { type IconPropsType } from '~components/common/Icon';
 
 // STYLES
 import {
@@ -54,7 +51,7 @@ const PaperIcon = (iconProps: IconProps) => (
 	/>
 );
 
-const PaperProvider: React.FC<Props> = (props) => (
+const PaperProvider: React.FC<Props> = props => (
 	<Provider theme={PAPER_THEME} settings={{ icon: PaperIcon }}>
 		{props.children}
 	</Provider>

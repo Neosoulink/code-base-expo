@@ -9,7 +9,7 @@ export interface Props {
 	children: React.ReactElement<unknown>;
 }
 
-const ReduxProvider: React.FC<Props> = (props) => (
+const ReduxProvider: React.FC<Props> = props => (
 	<Provider store={store}>{props.children}</Provider>
 );
 
