@@ -6,7 +6,7 @@ import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { PAPER_THEME } from './Paper';
 
 // STYLES
-import { GLOBAL_STYLE as GS } from '@styles';
+import { GLOBAL_STYLE as GS } from '~styles';
 
 // LOCAL TYPES
 export type NavigationThemeType = typeof DefaultTheme;

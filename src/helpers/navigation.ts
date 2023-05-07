@@ -8,7 +8,7 @@ import {
 } from '@react-navigation/native';
 
 // HOOKS
-import useIsMounted from '@/hooks/useIsMounted';
+import useIsMounted from '~hooks/useIsMounted';
 
 export const RootNavigation = {
 	navigate(_name: string, _params?: any) {},
